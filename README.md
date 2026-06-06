@@ -4,7 +4,7 @@
 
 ## 1. Overview
 
-![FZ](fz.png)
+![FZ](FZ.png)
 
 MTUKG is a multi-scale temporal urban knowledge graph dataset designed for knowledge-enhanced urban spatiotemporal prediction. It organizes heterogeneous urban entities across micro-, meso-, and macro-levels, including POIs, roads, junctions, functional zones, areas, and boroughs. Unlike conventional static UrbanKGs, MTUKG represents urban evolution through time-interval facts, enabling urban knowledge to be aligned with specific prediction windows.
 
