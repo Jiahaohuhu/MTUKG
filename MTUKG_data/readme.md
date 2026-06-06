@@ -2,16 +2,16 @@
 
 All raw data is stored in the **'./Meta_data'** folder. You can process these files using the `preprocess_meta_data_nyc.py` or `preprocess_meta_data_chi.py` scripts to perform necessary cleaning and alignment. Once processed, the cleaned data will be saved into the **'./Processed_data'** folder.
 
-Next, you can generate the basic urban knowledge graphs by running the `construct_UrbanKG_XXX.py` script. After that, under the `UrbanKG` directory, both the **'./CHI'** and **'./NYC'** folders contain corresponding scripts for knowledge graph enhancement. You may sequentially run `fz.py`, `add_fz.py`, `add_PLR.py`, and `add_FHPC.py` to build the enhanced HUSK.
+Next, you can generate the basic urban knowledge graphs by running the `construct_UrbanKG_XXX.py` script. After that, under the `UrbanKG` directory, both the **'./CHI'** and **'./NYC'** folders contain corresponding scripts for knowledge graph enhancement. You may sequentially run `fz.py`, `add_fz.py`, `add_PLR.py`, and `add_FHPC.py` to build the enhanced MTUKG.
 
-In addition, the `fixed_sequence_entity2id_relation2id.py` script assigns unique IDs to entities and relations in the HUSK. Then, `KG_split.py` is used to generate the training, validation, and test sets required for downstream POI-level tasks.
+In addition, the `fixed_sequence_entity2id_relation2id.py` script assigns unique IDs to entities and relations in the MTUKG. Then, `KG_split.py` is used to generate the training, validation, and test sets required for downstream POI-level tasks.
 
 The file information in each directory is as follows:
 
 ```
 ./Meta_data    Raw data set: administrative division data, POI and road network data
 ./Processed_data   Preprocessed data and clustering results of Functional Zones
-./UrbanKG    Various versions of HUSK, containing multiple types of entities and diverse relations
+./UrbanKG    Various versions of MTUKG, containing multiple types of entities and diverse relations
 ```
 
 The following types of atomic files are defined:
