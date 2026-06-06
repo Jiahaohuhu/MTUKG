@@ -6,7 +6,11 @@
 
 ![FZ](fz.png)
 
-HUSK is a hierarchically structured urban knowledge graph dataset designed for multi-level spatial tasks. It covers entities such as POIs, roads, and regions in New York City and Chicago, and introduces "Functional Zones" as an intermediate layer to bridge micro-level POIs and macro-level administrative areas. The figure above illustrates how the added functional zones are reflected within areas. Compared to existing UrbanKG datasets, HUSK captures urban semantics and spatial relationships at a finer granularity, enabling a wide range of tasks such as crime prediction, taxi demand forecasting, and new store recommendation, with significant performance improvements across multiple benchmark models.
+MTUKG is a multi-scale temporal urban knowledge graph dataset designed for knowledge-enhanced urban spatiotemporal prediction. It organizes heterogeneous urban entities across micro-, meso-, and macro-levels, including POIs, roads, junctions, functional zones, areas, and boroughs. Unlike conventional static UrbanKGs, MTUKG represents urban evolution through time-interval facts, enabling urban knowledge to be aligned with specific prediction windows.
+
+The dataset introduces temporal functional zones constructed from spatial units by jointly considering static urban contexts, spatial morphology, road structures, POI spatial influence, and dynamic urban events. By modeling both static spatial topology and temporal urban changes, MTUKG supports multi-scale temporal reasoning and provides structured knowledge for downstream tasks such as taxi demand prediction, crime prediction, 311 service request prediction, and POI-level knowledge graph completion.
+
+This repository provides the dataset, construction scripts, knowledge graph embedding modules, and evaluation code for reproducing the experiments of MTUKG.
 
 ## 2. Installation
 You can create and activate the environment required to run the project using the following commands.
