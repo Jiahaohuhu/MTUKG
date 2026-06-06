@@ -28,5 +28,4 @@ The following types of atomic files are defined:
 | UrbanKG_XXX_PLR_withFZ_FHPC.txt       | entity_name, relation_name, entity_name | FZ/707 FHPC PC/parking_area   |
 | cluster_result_alpha0.50_beta0.50.csv | functional_zone_id, area_id, poi_ids    | 7,211,"418980,621514,1074344" |
 
-### The Preparation for POI-level Tasks
-To perform POI-level tasks, the corresponding training, validation, and test sets are required. The `KG_split.py` script provides configurable options for switching between different tasks—simply modify the relevant sections of the code and run the script.
+
