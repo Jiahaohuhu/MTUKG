@@ -1,4 +1,4 @@
-![HUSK](HUSK.png)
+
 
 # MTUKG: A Multi-scale Temporal Urban Knowledge Graph Dataset for Knowledge-Enhanced Spatiotemporal Prediction
 
