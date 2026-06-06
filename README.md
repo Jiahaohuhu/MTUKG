@@ -1,7 +1,7 @@
 # MTUKG
 ![HUSK](HUSK.png)
 
-# A Hierarchically Structured Urban Knowledge Graph Dataset for Multi-Level Spatial Tasks
+# MTUKG: A Multi-scale Temporal Urban Knowledge Graph Dataset for Knowledge-Enhanced Spatiotemporal Prediction
 
 ## 1. Overview
 
