@@ -1,0 +1,28 @@
+relation_id,relation,description
+0,PLA,Point located Area
+1,RLA,Road located Area
+2,JLA,Junction located Area
+3,PLB,Point located Borough
+4,RLB,Road located Borough
+5,JLB,Junction located Borough
+6,ALB,Area located Borough
+7,JBR,Junction belongs to Road
+8,BNB,Borough neighbour Borough
+9,ANA,Area neighbour Area
+10,PLR,POI located Road
+11,PHPC,POI Has POI Category
+12,RHRC,Road Has Road Category
+13,JHJC,Junction Has Junction Category
+14,FHPC,FunctionalZone has Category
+15,PLF,POI located FunctionalZone
+16,FLA,FunctionalZone located Area
+17,BBF,Block belongs FunctionalZone
+18,FNF,FunctionalZone neighbour FunctionalZone
+19,RCIR,road_change in Road
+20,RRIR,road_repair in Road
+21,RCIB,road_change in Borough
+22,RPIB,road_repair in Borough
+23,LDIB,land_dev in Borough
+24,RCIF,road_change in FunctionalZone
+25,RPIF,road_repair in FunctionalZone
+26,LDIF,land_dev in FunctionalZone

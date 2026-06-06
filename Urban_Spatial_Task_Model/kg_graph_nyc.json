@@ -1,0 +1,15 @@
+{
+  "use_static_kg_embedding": true,
+  "static_kg_embedding_path": "../HUSK_Embedding_Model/embedding/NYC_region_embedding.npy",
+  "use_temporal_kg_embedding": true,
+  "temporal_kg_embedding_path": "../HUSK_Embedding_Model/embedding_day_reduced/NYC_region_temporal_embedding_32.npy",
+  "temporal_kg_index_path": "../HUSK_Embedding_Model/embedding_day/NYC_region_temporal_index.json",
+  "kg_temporal_align": "day",
+  "cache_dataset": false,
+  "batch_size": 8,
+
+  "use_kg_gate": true,
+  "kg_gate_mode": "weighted_concat",
+  "kg_gate_value": 0.5
+
+}
