@@ -1,6 +1,6 @@
 ![HUSK](HUSK.png)
 
-# A Hierarchically Structured Urban Knowledge Graph Dataset for Multi-Level Spatial Tasks
+# MTUKG: A Multi-scale Temporal Urban Knowledge Graph Dataset for Knowledge-Enhanced Spatiotemporal Prediction
 
 ## 1. Overview
 
@@ -12,8 +12,8 @@ HUSK is a hierarchically structured urban knowledge graph dataset designed for m
 You can create and activate the environment required to run the project using the following commands.
 
 ```
-conda create -n python3.7 HUSK
-conda activate HUSK
+conda create -n python3.8 MTUKG
+conda activate MTUKG
 pip install -r requirements.txt
 ```
 
