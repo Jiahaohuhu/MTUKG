@@ -23,7 +23,7 @@ Please ensure that you have cloned the project and entered the directory before 
 
 The dataset used in this study comprises both static data and timestamped time-series data. The static data is derived from two open-source datasets within UUKG—covering spatial data for New York and Chicago—which we further filtered and refined. For the time-series data, we collected and cleaned event data for both cities. Given the substantial size of the original datasets, we have included sample data, data processing code, and model code to assist researchers in understanding our work.
 
-The complete static data can be found in the [Folder - Google Drive](https://drive.google.com/drive/folders/1egTmnKRzTQuyW_hsbFURUonGC-bJmBHW), and the complete time-series data can be found at XXX.
+The complete static data can be found in the [Folder - Google Drive](https://drive.google.com/drive/folders/1egTmnKRzTQuyW_hsbFURUonGC-bJmBHW), and the complete time-series data can be found at [Folder - Google Drive](https://drive.google.com/drive/folders/1XnXMyZ1nf40UUSwZxxvapYMe8TqI6rTQ).
 
 We provide explanations regarding the data and preprocessing steps at [MTUKG/MTUKG_data at main · Jiahaohuhu/MTUKG](https://github.com/Jiahaohuhu/MTUKG/tree/main/MTUKG_data). Users can prepare their own urban data to construct a personalized UrbanKG/TUKG.
 
