@@ -1,31 +1,22 @@
 ### Guidance on data usage and processing
 
-All raw data is stored in the **'./Meta_data'** folder. You can process these files using the `preprocess_meta_data_nyc.py` or `preprocess_meta_data_chi.py` scripts to perform necessary cleaning and alignment. Once processed, the cleaned data will be saved into the **'./Processed_data'** folder.
+We store the raw, unprocessed files in the `./Meta_data` directory. To preprocess, align, and filter these files, we use the `preprocess_nyc_data.py` or `preprocess_chi_data.py` scripts. The processed data is then saved in the `./Processed_data` directory. The scripts `nyc_functional_zones.py` and `chi_functional_zones.py` are used to generate time-series functional zone data. Finally, we execute the `construct_TUKG_NYC.py` or `construct_TUKG_CHI.py` scripts to construct the urban knowledge graph; this process assigns unique IDs to the entities and relations within the MTUKG and partitions the graph into training, validation, and test sets, with the resulting graphs stored in the `./UrbanKG` directory.
 
-Next, you can generate the basic urban knowledge graphs by running the `construct_UrbanKG_XXX.py` script. After that, under the `UrbanKG` directory, both the **'./CHI'** and **'./NYC'** folders contain corresponding scripts for knowledge graph enhancement. You may sequentially run `fz.py`, `add_fz.py`, `add_PLR.py`, and `add_FHPC.py` to build the enhanced MTUKG.
-
-In addition, the `fixed_sequence_entity2id_relation2id.py` script assigns unique IDs to entities and relations in the MTUKG. Then, `KG_split.py` is used to generate the training, validation, and test sets required for downstream POI-level tasks.
-
-The file information in each directory is as follows:
-
+File information for each directory is as follows:
 ```
-./Meta_data    Raw data set: administrative division data, POI and road network data
-./Processed_data   Preprocessed data and clustering results of Functional Zones
-./UrbanKG    Various versions of MTUKG, containing multiple types of entities and diverse relations
+./Meta_data Raw datasets: administrative division data, POI (Point of Interest) data, road network data, and urban spatiotemporal event data
+./Processed_data Preprocessed data and functional zone clustering results
+./MTUKG Different versions of MTUKG, featuring various entity types and diverse relationships
 ```
 
 The following types of atomic files are defined:
 
-| filename                              | content                                 | example                       |
-| ------------------------------------- | --------------------------------------- | ----------------------------- |
-| entity2id_XXX.txt                     | entity_name, entity_id                  | FZ/1256 237542                |
-| relation2id_XXX.txt                   | relation_name, relation_id              | PLR 13                        |
-| train                                 | entity_id, relation_id, entity_id       | 187868	12	236285        |
-| valid                                 | entity_id, relation_id, entity_id       | 19586	10	236262         |
-| test                                  | entity_id, relation_id, entity_id       | 137618	5	140317         |
-| triplet.txt                           | entity_id, relation_id, entity_id       | 48034   12 168303             |
-| UrbanKG_XXX.txt                       | entity_name, relation_name, entity_name | POI/442 PLA Area/13           |
-| UrbanKG_XXX_PLR_withFZ_FHPC.txt       | entity_name, relation_name, entity_name | FZ/707 FHPC PC/parking_area   |
-| cluster_result_alpha0.50_beta0.50.csv | functional_zone_id, area_id, poi_ids    | 7,211,"418980,621514,1074344" |
-
+| filename                    | content                                 | example                                 |
+| --------------------------- | --------------------------------------- | --------------------------------------- |
+| entity2id_XXX.csv           | entity_name, entity_id                  | area::110 11                            |
+| relation2id_XXX.csv         | relation_name, relation_id              | FHPC 6                                  |
+| static_train temporal_train | entity_id, relation_id, entity_id       | 1244001	26	721896	2022-06-28	2022-07-12 |
+| static_vaild temporal_vaild | entity_id, relation_id, entity_id       | 1231969	24	22784	2016-03-16	2016-04-19  |
+| static_test temporal_test   | entity_id, relation_id, entity_id       | 16379	2	98840	2017-07-01	2017-09-30     |
+| UrbanKG_XXX.txt             | entity_name, relation_name, entity_name | road::8865	RLA	area::91                 |
 
