@@ -26,8 +26,10 @@ The dataset used in this study comprises both static data and timestamped time-s
 The complete static data can be found in the [Folder - Google Drive](https://drive.google.com/drive/folders/1egTmnKRzTQuyW_hsbFURUonGC-bJmBHW), and the complete time-series data can be found at XXX.
 
 We provide explanations regarding the data and preprocessing steps at [MTUKG/MTUKG_data at main · Jiahaohuhu/MTUKG](https://github.com/Jiahaohuhu/MTUKG/tree/main/MTUKG_data). Users can prepare their own urban data to construct a personalized UrbanKG/TUKG.
+
 #### 3.1 MTUKG Data
 ##### 3.1.1 Data Overview
+
 The statistical information for our raw dataset is as follows:：
 
 | Dataset | POI    | Road   | Junc. | Area | Borough | PE     | RC     | RP     | LD     |
@@ -41,6 +43,7 @@ The MTUKG statistical information is as follows:
 | ------- | ------- | -------- | ------- | ------- | ------ | ------- |
 | NYC     | 1256769 | 27       | 7472392 | 5230673 | 747238 | 1494481 |
 | CHI     | 1250655 | 27       | 9126146 | 7301884 | 910917 | 913345  |
+
 The MTUKG corresponding to each city is composed of both a static graph and a temporal graph. Entities represent city characteristics at various levels, while relationships serve as edges connecting pairs of entities. We define the relationship types as follows:
 
 | Relation | description                                                  | count                         |
@@ -74,6 +77,7 @@ The MTUKG corresponding to each city is composed of both a static graph and a te
 | LDIB     | Indicates that land development in the borough.              | NYC: 266082 / CHI: 129414     |
 
 ##### 3.1.2 Guidelines for Data Use and Processing
+
 We store the raw, unprocessed files in the `./Meta_data` directory. To preprocess, align, and filter these files, we use the `preprocess_nyc_data.py` or `preprocess_chi_data.py` scripts. The processed data is then saved in the `./Processed_data` directory. The scripts `nyc_functional_zones.py` and `chi_functional_zones.py` are used to generate time-series functional zone data. Finally, we execute the `construct_TUKG_NYC.py` or `construct_TUKG_CHI.py` scripts to construct the urban knowledge graph; this process assigns unique IDs to the entities and relations within the MTUKG and partitions the graph into training, validation, and test sets, with the resulting graphs stored in the `./UrbanKG` directory.
 
 File information for each directory is as follows:
@@ -158,8 +162,10 @@ entity_id: Describe which entity the record is based on, which is the ID of geo 
 ```
 
 **xxx.config**: The config file is used to supplement the information describing the above five tables themselves. It is stored in `json` format and consists of six keys: `geo`, `usr`, `rel`, `dyna`, `ext`, and `info`.
+
 ## 4. How to run
 #### 4.1 Two-stage TUKG embedding
+
 To train and evaluate the MTUKG embedding model for the chain prediction task, first perform static knowledge graph embedding using GIE by running `run.py`:
 ```
 python ./UrbanKG_Embedding_Model/run.py 
@@ -229,7 +235,9 @@ python ./tkbi-master/main.py
 ```
 **How ​​to obtain temporal embeddings?**
 You can run `get_embedding.py` to obtain the final embedding representations. To ensure compatibility with downstream tasks, we provide a file for dimensionality reduction; you can run `reduce_kg_embedding.py` for this purpose.
+
 #### 4.2 Knowledge-Enhanced Urban Spatiotemporal Prediction
+
 To train and evaluate the USTP model for chain prediction tasks, you can use the `run.py` script.
 ```shell
 python ./USTP_Model/run.py --task traffic_state_pred --model STGCN --dataset NYCTaxi20200406
@@ -240,9 +248,11 @@ This script will run the STGCN model on the NYCTaxi20200406 dataset for the traf
 To integrate UrbanKG embeddings, we directly concatenate the embeddings with USTP features to form the input. You can make modifications in **`./kg_graph_nyc.json`** and **`./kg_graph_chi.json`**.
 
 You can find more information about these models in the **`readme.md`** file located in the project's specific directory.
+
 ## 5 Directory structure
 
 The expected structure of the file is:
+```
 MTUKG
 ├─MTUKG_data
 │  │  construct_TUKG_CHI.py.py      
@@ -369,3 +379,4 @@ MTUKG
 │
 │  README.md
 │  requirements.txt
+```
